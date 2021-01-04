@@ -1,0 +1,11 @@
+<h1 style="text-align:center; color:#D4B1AA;"><%= @movie.title %></h1>
+<h2 style="text-align:center; color:#A29B8D">Year Created: <%= @movie.creation_year %></h2>
+<h2 style="text-align:center; color:#A29B8D">Genre: <%= @movie.genre %></h2>
+<h2 style="text-align:center; color:#A29B8D">Average Actor Age: <%= @movie.avg_act %></h2>
+
+<ul style="color:#555555; text-align:center;">
+  <% @movie.act_age.each do |a| %>
+    <h3>Actor: <%= a.name %></h3><br>
+    <p><b>Age: <%= a.age %></p></b><br/>
+  <% end %>
+</ul>
