@@ -6,6 +6,10 @@ class ActorsController < ApplicationController
     redirect_back(fallback_location: movie_path(:movie_id))
   end
 
+  def show
+    @actor = Actor.find(params[:id])
+  end
+
   private
   def actor_params
     params.permit(:name, :age)
