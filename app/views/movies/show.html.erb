@@ -9,3 +9,12 @@
     <p><b>Age: <%= a.age %></p></b><br/>
   <% end %>
 </ul>
+
+<h3 style="color:#A29B8D">Create New Actor</h3>
+<%= form_with model: @actor, method: :post, url: movie_actors_path(@movie), class: 'actor_form', local: true do |a| %>
+  <%= a.label :name, 'Name:' %><br>
+  <%= a.text_field :name %><br>
+  <%= a.label :age, 'Age (digits only):' %><br>
+  <%= a.text_field :age %><br/>
+  <p><%= a.submit 'Create Actor' %></p>
+<% end %>
