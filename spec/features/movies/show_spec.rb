@@ -53,4 +53,15 @@ describe 'Movie Show Page' do
     expect(page).to have_content(@m1.avg_act)
     expect(@m1.avg_act).to eq(0.297e2)
   end
+
+  it 'should display a form to add a new actor' do
+    expect(page).to have_content('Create New Actor')
+    fill_in :name, with: 'Actor 4'
+    fill_in :age, with: '65'
+    click_button 'Create Actor'
+
+    expect(current_path).to eq(movie_path(@m1))
+    expect(page).to have_content('Actor 4')
+    expect(page).to have_content(65)
+  end
 end
